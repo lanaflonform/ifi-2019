@@ -336,13 +336,13 @@ Pour ce faire, ajouter dans votre `pom.xml` le bloc suivant (en dessous de votre
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.2</version> <!--1-->
+                <version>3.2.3</version> <!--1-->
             </plugin>
         </plugins>
     </pluginManagement>
 </build>
 ----
-<1> La version 3.2.2 du maven-war-plugin ne nécessite pas de fichier web.xml par défaut, comme précisé dans la link:https://maven.apache.org/plugins/maven-war-plugin/war-mojo.html#failOnMissingWebXml[documentation,window="_blank"]
+<1> La version 3.2.3 du maven-war-plugin ne nécessite pas de fichier web.xml par défaut, comme précisé dans la link:https://maven.apache.org/plugins/maven-war-plugin/war-mojo.html#failOnMissingWebXml[documentation,window="_blank"]
 
 On relance un `mvn package` pour valider la configuration
 
@@ -485,19 +485,19 @@ Ajoutez les dépendances suivant dans votre pom.xml
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId> <!--1-->
-    <version>5.3.2</version>
+    <version>5.5.2</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-engine</artifactId> <!--2-->
-    <version>5.3.2</version>
+    <version>5.5.2</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-core</artifactId>
-    <version>2.23.4</version>
+    <version>3.1.0</version>
     <scope>test</scope>
 </dependency>
 ----
@@ -514,11 +514,11 @@ Il vous faut également surcharger la version du `maven-surefire-plugin`
     <plugins>
         <plugin>
             <artifactId>maven-war-plugin</artifactId>
-            <version>3.2.2</version>
+            <version>3.2.3</version>
         </plugin>
         <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.22.1</version> <!--1-->
+            <version>2.22.2</version> <!--1-->
         </plugin>
     </plugins>
 </pluginManagement>
@@ -1041,7 +1041,7 @@ Ajouter la dépendance suivante à votre projet :
 <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
-    <version>2.9.8</version>
+    <version>2.10.0</version>
 </dependency>
 ----
 
