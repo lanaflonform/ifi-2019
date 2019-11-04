@@ -3,8 +3,6 @@
 
 :icons: font
 
-:iconfont-cdn: https://use.fontawesome.com/releases/v5.4.2/css/all.css
-
 :toc: left
 :toclevels: 4
 
