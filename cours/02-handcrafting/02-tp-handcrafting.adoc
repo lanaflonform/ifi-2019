@@ -873,9 +873,6 @@ Créez les packages suivants :
 
 Créez également le répertoire `src/main/resources`.
 
-image:images/packages.png[]
-
-
 === La classe PokemonType
 
 Pour commencer, nous allons créer notre objet métier.
