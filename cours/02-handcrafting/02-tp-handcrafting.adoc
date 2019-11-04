@@ -1355,7 +1355,7 @@ Peut-être faut-il ajouter des annotations java sur le controller pour l'enregis
 
 Enfin, pour finaliser notre développement, nous devons :
 
-1. Enregistrer notre `PokemonTypController` dans la `DispatcherServlet` (en modifiant la méthode `init` de la `DispatcherServlet`)
+1. Enregistrer notre `PokemonTypeController` dans la `DispatcherServlet` (en modifiant la méthode `init` de la `DispatcherServlet`)
 2. Utiliser `jackson-databind` pour transformer les résultats de nos controlleurs en JSON
 3. Ne pas oublier de transmettre les paramètres reçus en requête au controlleur !
 
