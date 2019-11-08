@@ -196,7 +196,7 @@ Nous avons besoin de Tomcat pour exécuter notre Servlet !
 
 Télécharger tomcat depuis la page officielle : link:https://tomcat.apache.org/download-90.cgi[,window="_blank"]
 
-Récupérer le zip ou le tar.gz.
+Récupérez ou le tar.gz "Binary Distribution".
 
 ==== Configuration pour IntelliJ IDEA
 
@@ -209,6 +209,15 @@ image::images/02-tomcat-intellij-added.png[]
 Créer une configuration d'exécution utilisant le Tomcat
 
 image::images/03-tomcat-run-config-server.png[]
+
+Ajoutez votre projet dans l'onglet "Deployments". Vous pouvez également modifier votre "Application Context" en le positionnant à "/"
+
+[NOTE]
+====
+Le "Context" de tomcat, est le chemin de base auquel Tomcat va affecter les requêtes de votre Servlet.
+Avec un context qui vaut "/handcraft", vos requêtes devront être envoyées à l'URL "/handcraft/hello" par exemple.
+Comme nous souhaitons avoir des URL de forme "/hello", nous positionnons un context à "/".
+====
 
 image::images/04-tomcat-run-config-artifacts.png[]
 

@@ -877,7 +877,7 @@ Cette dépendance aura le scope <code>provided</code> puisque:</p>
 <p>Télécharger tomcat depuis la page officielle : <a href="https://tomcat.apache.org/download-90.cgi" class="bare" target="_blank" rel="noopener">https://tomcat.apache.org/download-90.cgi</a></p>
 </div>
 <div class="paragraph">
-<p>Récupérer le zip ou le tar.gz.</p>
+<p>Récupérez ou le tar.gz "Binary Distribution".</p>
 </div>
 <div class="sect3">
 <h4 id="_configuration_pour_intellij_idea"><a class="anchor" href="#_configuration_pour_intellij_idea"></a><a class="link" href="#_configuration_pour_intellij_idea">3.3.1. Configuration pour IntelliJ IDEA</a></h4>
@@ -901,6 +901,25 @@ Cette dépendance aura le scope <code>provided</code> puisque:</p>
 <div class="content">
 <img src="images/03-tomcat-run-config-server.png" alt="03 tomcat run config server">
 </div>
+</div>
+<div class="paragraph">
+<p>Ajoutez votre projet dans l&#8217;onglet "Deployments". Vous pouvez également modifier votre "Application Context" en le positionnant à "/"</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le "Context" de tomcat, est le chemin de base auquel Tomcat va affecter les requêtes de votre Servlet.
+Avec un context qui vaut "/handcraft", vos requêtes devront être envoyées à l&#8217;URL "/handcraft/hello" par exemple.
+Comme nous souhaitons avoir des URL de forme "/hello", nous positionnons un context à "/".</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3071,7 +3090,7 @@ Peut-être faut-il ajouter des annotations java sur le controller pour l&#8217;e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-08 08:29:42 +0100
+Last updated 2019-11-08 08:39:49 +0100
 </div>
 </div>
 <style>
