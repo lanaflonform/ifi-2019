@@ -1206,15 +1206,15 @@ public class PokemonTypeRepository {
 
 === Le PokemonTypeController
 
-Ecrire un controller qui expose une route "/pokemon".
+Ecrire un controller qui expose une route "/pokemons".
 Cette route pourra être appelée avec des paramètres éventuels, `id` ou `name`.
 
 Les requêtes devant être implémentées sont donc, par exemple :
 
-* http://localhost:8080/pokemon?id=25
-* http://localhost:8080/pokemon?id=145
-* http://localhost:8080/pokemon?name=pikachu
-* http://localhost:8080/pokemon?name=zapdos
+* http://localhost:8080/pokemons?id=25
+* http://localhost:8080/pokemons?id=145
+* http://localhost:8080/pokemons?name=pikachu
+* http://localhost:8080/pokemons?name=zapdos
 
 
 ==== Les tests unitaires du PokemonTypeController
@@ -1361,7 +1361,7 @@ Enfin, pour finaliser notre développement, nous devons :
 
 Testez votre micro-service en consultant les urls suivantes :
 
-* link:http://localhost:8080/pokemon?id=25[,window="_blank"]
-* link:http://localhost:8080/pokemon?id=145[,window="_blank"]
-* link:http://localhost:8080/pokemon?name=pikachu[,window="_blank"]
-* link:http://localhost:8080/pokemon?name=zapdos[,window="_blank"]
+* link:http://localhost:8080/pokemons?id=25[,window="_blank"]
+* link:http://localhost:8080/pokemons?id=145[,window="_blank"]
+* link:http://localhost:8080/pokemons?name=pikachu[,window="_blank"]
+* link:http://localhost:8080/pokemons?name=zapdos[,window="_blank"]
