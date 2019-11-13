@@ -913,6 +913,19 @@ Nous allons également rajouter un dernier test, qui a pour but de :
 * démarrer l'application spring en utilisant un port aléatoire
 * invoquer dynamiquement notre URL
 
+Ajoutez la dépendance suivante à votre `pom.xml`
+
+.pom.xml
+[source,xml,linenums]
+----
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+</dependency>
+----
+
+NOTE: L'ajout de `spring-boot-starter-test`, depuis la version 2.2.0, ajoute également `junit-jupiter` et `mockito`. Vous pouvez donc supprimer ces dépendances de votre pom.
+
 [NOTE]
 Ce genre de test, qui démarre une base de données ou un serveur par exemple, est appelé test d'intégration
 
@@ -934,7 +947,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(SpringRunner.class) //<1>
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //<1>
 class PokemonTypeControllerIntegrationTest {
 
@@ -965,7 +977,7 @@ class PokemonTypeControllerIntegrationTest {
     }
 }
 ----
-<1> On utilise le SpringRunner pour exécuter ce test. Ce test va donc instancier Spring. On précise également que l'environnement Spring doit utiliser un port aléatoire.
+<1> On utilise un `SpringBootTest` pour exécuter ce test. Ce test va donc instancier Spring. On précise également que l'environnement Spring doit utiliser un port aléatoire.
 <2> On demande à Spring de nous donner le port sur lequel le serveur aura été démarré
 <3> On demande à Spring de nous donner un `TestRestTemplate`, qui nous permettra de jouer une requête HTTP
 <4> On peut faire directement de l'injection de dépendance dans notre test, nous en profitons pour valider que notre controller est bien chargé.
