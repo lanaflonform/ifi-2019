@@ -781,19 +781,19 @@ packages Java qui vont matérialiser notre architecture applicative.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>com.ifi.tp.pokemon_type_api.bo</code> : va contenir les objets métier de notre application</p>
+<p><code>com.ifi.pokemon_type_api.bo</code> : va contenir les objets métier de notre application</p>
 </li>
 <li>
-<p><code>com.ifi.tp.pokemon_type_api.config</code> : va contenir la configuration de notre application</p>
+<p><code>com.ifi.pokemon_type_api.config</code> : va contenir la configuration de notre application</p>
 </li>
 <li>
-<p><code>com.ifi.tp.pokemon_type_api.controller</code> : va contenir la configuration de notre application</p>
+<p><code>com.ifi.pokemon_type_api.controller</code> : va contenir la configuration de notre application</p>
 </li>
 <li>
-<p><code>com.ifi.tp.pokemon_type_api.repository</code> : va contenir les repository de notre application</p>
+<p><code>com.ifi.pokemon_type_api.repository</code> : va contenir les repository de notre application</p>
 </li>
 <li>
-<p><code>com.ifi.tp.pokemon_type_api.service</code> : va contenir les services de notre application</p>
+<p><code>com.ifi.pokemon_type_api.service</code> : va contenir les services de notre application</p>
 </li>
 </ul>
 </div>
@@ -1086,7 +1086,7 @@ Par exemple, <code>Pikachu</code> est de type <code>electric</code>. Les pokémo
 <p>Implémentez le test unitaire suivant :</p>
 </div>
 <div class="listingblock">
-<div class="title">src/test/java/com/miage/ifi/tp/pokemon_type_api/repository/PokemonRepositoryImplTest.java</div>
+<div class="title">src/test/java/com/ifi/pokemon_type_api/repository/PokemonRepositoryImplTest.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1197,7 +1197,7 @@ Par exemple, <code>Pikachu</code> est de type <code>electric</code>. Les pokémo
 <p>Ajouter l&#8217;interface du PokemonTypeRepository et son implémentation</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/java/com/miage/ifi/tp/pokemon_type_api/repository/PokemonTypeRepository.java</div>
+<div class="title">src/main/java/com/ifi/pokemon_type_api/repository/PokemonTypeRepository.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1212,7 +1212,7 @@ Par exemple, <code>Pikachu</code> est de type <code>electric</code>. Les pokémo
 </div>
 </div>
 <div class="listingblock">
-<div class="title">src/main/java/com/miage/ifi/tp/pokemon_type_api/repository/PokemonTypeRepositoryImpl.java</div>
+<div class="title">src/main/java/com/ifi/pokemon_type_api/repository/PokemonTypeRepositoryImpl.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1356,7 +1356,7 @@ l&#8217;instancier !</p>
 11</pre></div></td><td class="code"><pre><span></span><span class="tok-nd">@Test</span>
 <span class="tok-kt">void</span> <span class="tok-nf">applicationContext_shouldLoadPokemonRepository</span><span class="tok-o">(){</span>
     <i class="conum" data-value="1"></i><b>(1)</b>
-    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-s">&quot;com.ifi.tp.pokemon_type_api.repository&quot;</span><span class="tok-o">);</span>
+    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-s">&quot;com.ifi.pokemon_type_api.repository&quot;</span><span class="tok-o">);</span>
     <span class="tok-n">var</span> <span class="tok-n">repoByName</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-s">&quot;pokemonTypeRepositoryImpl&quot;</span><span class="tok-o">);</span> <i class="conum" data-value="2"></i><b>(2)</b>
     <span class="tok-n">var</span> <span class="tok-n">repoByClass</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-n">PokemonTypeRepository</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">);</span> <i class="conum" data-value="3"></i><b>(3)</b>
 
@@ -1426,7 +1426,7 @@ un service qui consomme notre repository !</p>
 <div class="sect2">
 <h3 id="_le_test_unitaire_3"><a class="anchor" href="#_le_test_unitaire_3"></a><a class="link" href="#_le_test_unitaire_3">7.1. Le test unitaire</a></h3>
 <div class="listingblock">
-<div class="title">src/test/java/com/miage/ifi/tp/pokemon_type_api/service/PokemonTypeServiceImplTest.java</div>
+<div class="title">src/test/java/com/ifi/pokemon_type_api/service/PokemonTypeServiceImplTest.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1458,9 +1458,9 @@ un service qui consomme notre repository !</p>
 28
 29
 30
-31</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.service</span><span class="tok-o">;</span>
+31</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.pokemon_type_api.service</span><span class="tok-o">;</span>
 
-<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.repository.PokemonTypeRepository</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.pokemon_type_api.repository.PokemonTypeRepository</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.junit.jupiter.api.Test</span><span class="tok-o">;</span>
 
 <span class="tok-kn">import static</span> <span class="tok-nn">org.mockito.Mockito.mock</span><span class="tok-o">;</span>
@@ -1511,7 +1511,7 @@ un service qui consomme notre repository !</p>
 <p>L&#8217;interface Java</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/java/com/miage/ifi/tp/pokemon_type_api/service/PokemonTypeService.java</div>
+<div class="title">src/main/java/com/ifi/pokemon_type_api/service/PokemonTypeService.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1527,7 +1527,7 @@ un service qui consomme notre repository !</p>
 <p>et son implémentation</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/java/com/miage/ifi/tp/pokemon_type_api/service/PokemonTypeServiceImpl.java</div>
+<div class="title">src/main/java/com/ifi/pokemon_type_api/service/PokemonTypeServiceImpl.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1550,9 +1550,9 @@ un service qui consomme notre repository !</p>
 19
 20
 21
-22</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.service</span><span class="tok-o">;</span>
+22</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.pokemon_type_api.service</span><span class="tok-o">;</span>
 
-<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
 
 <span class="tok-kn">import</span> <span class="tok-nn">java.util.List</span><span class="tok-o">;</span>
 
@@ -1797,7 +1797,7 @@ Cependant, nous n&#8217;aurons plus à gérer les paramètres manuellement via u
 mais nous allons utiliser toute la puissance de Spring.</p>
 </div>
 <div class="listingblock">
-<div class="title">src/test/java/com/miage/ifi/tp/pokemon_type_api/controller/PokemonTypeControllerTest.java</div>
+<div class="title">src/test/java/com/ifi/pokemon_type_api/controller/PokemonTypeControllerTest.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1836,10 +1836,10 @@ mais nous allons utiliser toute la puissance de Spring.</p>
 35
 36
 37
-38</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.controller</span><span class="tok-o">;</span>
+38</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.pokemon_type_api.controller</span><span class="tok-o">;</span>
 
-<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
-<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.service.PokemonTypeService</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.pokemon_type_api.service.PokemonTypeService</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.junit.jupiter.api.Test</span><span class="tok-o">;</span>
 
 <span class="tok-kn">import static</span> <span class="tok-nn">org.junit.jupiter.api.Assertions.*</span><span class="tok-o">;</span>
@@ -1884,7 +1884,7 @@ mais nous allons utiliser toute la puissance de Spring.</p>
 <p>Compléter l&#8217;implémentation du controller :</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/java/com/miage/ifi/tp/pokemon_type_api/controller/PokemonTypeController.java</div>
+<div class="title">src/main/java/com/ifi/pokemon_type_api/controller/PokemonTypeController.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2034,7 +2034,7 @@ mais nous allons utiliser toute la puissance de Spring.</p>
 Implémentez la classe suivante :</p>
 </div>
 <div class="listingblock">
-<div class="title">src/main/java/com/miage/ifi/tp/pokemon_type_api/Application.java</div>
+<div class="title">src/main/java/com/ifi/pokemon_type_api/Application.java</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -2222,7 +2222,7 @@ Ce genre de test, qui démarre une base de données ou un serveur par exemple, e
 <p>Implémentez le test unitaire suivant :</p>
 </div>
 <div class="listingblock">
-<div class="title">com.ifi.tp.pokemon_type_api.controller.PokemonTypeControllerIntegrationTest</div>
+<div class="title">com.ifi.pokemon_type_api.controller.PokemonTypeControllerIntegrationTest</div>
 <div class="content">
 <pre class="pygments highlight nowrap"><code data-lang="java"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2265,9 +2265,9 @@ Ce genre de test, qui démarre une base de données ou un serveur par exemple, e
 39
 40
 41
-42</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.controller</span><span class="tok-o">;</span>
+42</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.pokemon_type_api.controller</span><span class="tok-o">;</span>
 
-<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.tp.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">com.ifi.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.junit.jupiter.api.Test</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.junit.runner.RunWith</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.springframework.beans.factory.annotation.Autowired</span><span class="tok-o">;</span>
@@ -2510,7 +2510,7 @@ Cependant, nous pouvons développer des routes supportant des paramètres suppl�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-13 10:39:41 +0100
+Last updated 2019-11-15 08:57:41 +0100
 </div>
 </div>
 <style>

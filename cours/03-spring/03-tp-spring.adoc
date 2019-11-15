@@ -138,11 +138,11 @@ packages Java qui vont matérialiser notre architecture applicative.
 
 Créer les packages suivants:
 
-* `com.ifi.tp.pokemon_type_api.bo` : va contenir les objets métier de notre application
-* `com.ifi.tp.pokemon_type_api.config` : va contenir la configuration de notre application
-* `com.ifi.tp.pokemon_type_api.controller` : va contenir la configuration de notre application
-* `com.ifi.tp.pokemon_type_api.repository` : va contenir les repository de notre application
-* `com.ifi.tp.pokemon_type_api.service` : va contenir les services de notre application
+* `com.ifi.pokemon_type_api.bo` : va contenir les objets métier de notre application
+* `com.ifi.pokemon_type_api.config` : va contenir la configuration de notre application
+* `com.ifi.pokemon_type_api.controller` : va contenir la configuration de notre application
+* `com.ifi.pokemon_type_api.repository` : va contenir les repository de notre application
+* `com.ifi.pokemon_type_api.service` : va contenir les services de notre application
 
 .Les packages Java de notre application
 image::images/packages.png[]
@@ -339,7 +339,7 @@ Ajoutez la dépendance suivante dans votre `pom.xml`
 
 Implémentez le test unitaire suivant :
 
-.src/test/java/com/miage/ifi/tp/pokemon_type_api/repository/PokemonRepositoryImplTest.java
+.src/test/java/com/ifi/pokemon_type_api/repository/PokemonRepositoryImplTest.java
 [source,java,linenums]
 ----
 package com.ifi.pokemon_type_api.repository;
@@ -398,7 +398,7 @@ class PokemonTypeRepositoryImplTest {
 
 Ajouter l'interface du PokemonTypeRepository et son implémentation
 
-.src/main/java/com/miage/ifi/tp/pokemon_type_api/repository/PokemonTypeRepository.java
+.src/main/java/com/ifi/pokemon_type_api/repository/PokemonTypeRepository.java
 [source,java,linenums]
 ----
 public interface PokemonTypeRepository {
@@ -408,7 +408,7 @@ public interface PokemonTypeRepository {
 }
 ----
 
-.src/main/java/com/miage/ifi/tp/pokemon_type_api/repository/PokemonTypeRepositoryImpl.java
+.src/main/java/com/ifi/pokemon_type_api/repository/PokemonTypeRepositoryImpl.java
 [source,java,linenums]
 ----
 public class PokemonTypeRepositoryImpl implements PokemonTypeRepository {
@@ -481,7 +481,7 @@ Modifiez le test unitaire de votre repository pour ajouter des éléments liés 
 @Test
 void applicationContext_shouldLoadPokemonRepository(){
     //<1>
-    var context = new AnnotationConfigApplicationContext("com.ifi.tp.pokemon_type_api.repository");
+    var context = new AnnotationConfigApplicationContext("com.ifi.pokemon_type_api.repository");
     var repoByName = context.getBean("pokemonTypeRepositoryImpl"); //<2>
     var repoByClass = context.getBean(PokemonTypeRepository.class); //<3>
 
@@ -517,12 +517,12 @@ un service qui consomme notre repository !
 
 === Le test unitaire
 
-.src/test/java/com/miage/ifi/tp/pokemon_type_api/service/PokemonTypeServiceImplTest.java
+.src/test/java/com/ifi/pokemon_type_api/service/PokemonTypeServiceImplTest.java
 [source,java,linenums]
 ----
-package com.ifi.tp.pokemon_type_api.service;
+package com.ifi.pokemon_type_api.service;
 
-import com.ifi.tp.pokemon_type_api.repository.PokemonTypeRepository;
+import com.ifi.pokemon_type_api.repository.PokemonTypeRepository;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
@@ -559,7 +559,7 @@ class PokemonTypeServiceImplTest {
 
 L'interface Java
 
-.src/main/java/com/miage/ifi/tp/pokemon_type_api/service/PokemonTypeService.java
+.src/main/java/com/ifi/pokemon_type_api/service/PokemonTypeService.java
 [source,java,linenums]
 ----
 public interface PokemonTypeService {
@@ -570,12 +570,12 @@ public interface PokemonTypeService {
 
 et son implémentation
 
-.src/main/java/com/miage/ifi/tp/pokemon_type_api/service/PokemonTypeServiceImpl.java
+.src/main/java/com/ifi/pokemon_type_api/service/PokemonTypeServiceImpl.java
 [source,java,linenums]
 ----
-package com.ifi.tp.pokemon_type_api.service;
+package com.ifi.pokemon_type_api.service;
 
-import com.ifi.tp.pokemon_type_api.bo.PokemonType;
+import com.ifi.pokemon_type_api.bo.PokemonType;
 
 import java.util.List;
 
@@ -703,13 +703,13 @@ Le controlleur est simple et s'inpire de ce que nous avons fait au TP précéden
 Cependant, nous n'aurons plus à gérer les paramètres manuellement via une `Map<String,String>`,
 mais nous allons utiliser toute la puissance de Spring.
 
-.src/test/java/com/miage/ifi/tp/pokemon_type_api/controller/PokemonTypeControllerTest.java
+.src/test/java/com/ifi/pokemon_type_api/controller/PokemonTypeControllerTest.java
 [source,java,linenums]
 ----
-package com.ifi.tp.pokemon_type_api.controller;
+package com.ifi.pokemon_type_api.controller;
 
-import com.ifi.tp.pokemon_type_api.bo.PokemonType;
-import com.ifi.tp.pokemon_type_api.service.PokemonTypeService;
+import com.ifi.pokemon_type_api.bo.PokemonType;
+import com.ifi.pokemon_type_api.service.PokemonTypeService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -750,7 +750,7 @@ class PokemonTypeControllerTest {
 
 Compléter l'implémentation du controller :
 
-.src/main/java/com/miage/ifi/tp/pokemon_type_api/controller/PokemonTypeController.java
+.src/main/java/com/ifi/pokemon_type_api/controller/PokemonTypeController.java
 [source,java,linenums]
 ----
 class PokemonTypeController {
@@ -828,7 +828,7 @@ Pour vous aider, voici des liens vers la documentation de spring-web :
 Pour exécuter notre projet, nous devons écrire un main java !
 Implémentez la classe suivante :
 
-.src/main/java/com/miage/ifi/tp/pokemon_type_api/Application.java
+.src/main/java/com/ifi/pokemon_type_api/Application.java
 [source,java,linenums]
 ----
 @SpringBootApplication //<1>
@@ -931,12 +931,12 @@ Ce genre de test, qui démarre une base de données ou un serveur par exemple, e
 
 Implémentez le test unitaire suivant :
 
-.com.ifi.tp.pokemon_type_api.controller.PokemonTypeControllerIntegrationTest
+.com.ifi.pokemon_type_api.controller.PokemonTypeControllerIntegrationTest
 [source,java,linenums]
 ----
-package com.ifi.tp.pokemon_type_api.controller;
+package com.ifi.pokemon_type_api.controller;
 
-import com.ifi.tp.pokemon_type_api.bo.PokemonType;
+import com.ifi.pokemon_type_api.bo.PokemonType;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
