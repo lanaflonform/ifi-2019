@@ -1356,7 +1356,7 @@ l&#8217;instancier !</p>
 11</pre></div></td><td class="code"><pre><span></span><span class="tok-nd">@Test</span>
 <span class="tok-kt">void</span> <span class="tok-nf">applicationContext_shouldLoadPokemonRepository</span><span class="tok-o">(){</span>
     <i class="conum" data-value="1"></i><b>(1)</b>
-    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-s">&quot;com.ifi.pokemon_type_api.repository&quot;</span><span class="tok-o">);</span>
+    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-s">&quot;com.ifi.pokemon_type_api&quot;</span><span class="tok-o">);</span>
     <span class="tok-n">var</span> <span class="tok-n">repoByName</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-s">&quot;pokemonTypeRepositoryImpl&quot;</span><span class="tok-o">);</span> <i class="conum" data-value="2"></i><b>(2)</b>
     <span class="tok-n">var</span> <span class="tok-n">repoByClass</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-n">PokemonTypeRepository</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">);</span> <i class="conum" data-value="3"></i><b>(3)</b>
 
@@ -1610,7 +1610,7 @@ un service qui consomme notre repository !</p>
 16
 17</pre></div></td><td class="code"><pre><span></span><span class="tok-nd">@Test</span>
 <span class="tok-kt">void</span> <span class="tok-nf">applicationContext_shouldLoadPokemonTypeService</span><span class="tok-o">(){</span>
-    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-n">PokemonTypeServiceImpl</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">,</span> <span class="tok-n">PokemonTypeRepositoryImpl</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">);</span>
+    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-s">&quot;com.ifi.pokemon_type_api&quot;</span><span class="tok-o">);</span>
     <span class="tok-n">var</span> <span class="tok-n">serviceByName</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-s">&quot;pokemonTypeServiceImpl&quot;</span><span class="tok-o">);</span>
     <span class="tok-n">var</span> <span class="tok-n">serviceByClass</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-n">PokemonTypeService</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">);</span>
 
@@ -1621,7 +1621,7 @@ un service qui consomme notre repository !</p>
 
 <span class="tok-nd">@Test</span>
 <span class="tok-kt">void</span> <span class="tok-nf">pokemonTypeRepository_shouldBeAutowired_withSpring</span><span class="tok-o">(){</span>
-    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-n">PokemonTypeServiceImpl</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">,</span> <span class="tok-n">PokemonTypeRepositoryImpl</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">);</span>
+    <span class="tok-n">var</span> <span class="tok-n">context</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">AnnotationConfigApplicationContext</span><span class="tok-o">(</span><span class="tok-s">&quot;com.ifi.pokemon_type_api&quot;</span><span class="tok-o">);</span>
     <span class="tok-n">var</span> <span class="tok-n">service</span> <span class="tok-o">=</span> <span class="tok-n">context</span><span class="tok-o">.</span><span class="tok-na">getBean</span><span class="tok-o">(</span><span class="tok-n">PokemonTypeServiceImpl</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">);</span>
     <span class="tok-n">assertNotNull</span><span class="tok-o">(</span><span class="tok-n">service</span><span class="tok-o">.</span><span class="tok-na">pokemonTypeRepository</span><span class="tok-o">);</span>
 <span class="tok-o">}</span>
@@ -2263,18 +2263,14 @@ Ce genre de test, qui démarre une base de données ou un serveur par exemple, e
 37
 38
 39
-40
-41
-42</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.pokemon_type_api.controller</span><span class="tok-o">;</span>
+40</pre></div></td><td class="code"><pre><span></span><span class="tok-kn">package</span> <span class="tok-nn">com.ifi.pokemon_type_api.controller</span><span class="tok-o">;</span>
 
 <span class="tok-kn">import</span> <span class="tok-nn">com.ifi.pokemon_type_api.bo.PokemonType</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.junit.jupiter.api.Test</span><span class="tok-o">;</span>
-<span class="tok-kn">import</span> <span class="tok-nn">org.junit.runner.RunWith</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.springframework.beans.factory.annotation.Autowired</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.springframework.boot.test.context.SpringBootTest</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.springframework.boot.test.web.client.TestRestTemplate</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">org.springframework.boot.web.server.LocalServerPort</span><span class="tok-o">;</span>
-<span class="tok-kn">import</span> <span class="tok-nn">org.springframework.test.context.junit4.SpringRunner</span><span class="tok-o">;</span>
 
 <span class="tok-kn">import static</span> <span class="tok-nn">org.junit.jupiter.api.Assertions.*</span><span class="tok-o">;</span>
 
@@ -2510,7 +2506,7 @@ Cependant, nous pouvons développer des routes supportant des paramètres suppl�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-15 08:57:41 +0100
+Last updated 2019-11-15 09:08:04 +0100
 </div>
 </div>
 <style>
