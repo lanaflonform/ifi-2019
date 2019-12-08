@@ -1,0 +1,75 @@
+:source-highlighter: pygments
+:prewrap!:
+
+:icons: font
+
+:toc: left
+:toclevels: 4
+
+:linkattrs:
+
+:sectlinks:
+:sectanchors:
+:sectnums:
+
+:experimental:
+
+:stem:
+
+= IFI - Rendu !
+
+== Modalités de rendu
+
+Le rendu se fait via vos repositories Github.
+
+Vous devez push votre code directement sur les repositories qui vous sont affectés.
+
+Les repositories seront clôturés le 27 décembre à 20h. Vous avez donc encore un peu de temps pour finaliser votre projet.
+
+Le projet est donc constitué de 3 parties :
+
+* pokemon-type-api
+* trainer-api
+* pokemon-ui
+
+NOTE: Le tp "handcraft" ne fait pas partie du rendu.
+
+== Critères de notation
+
+|===
+| API | Fonctionnalité | Points
+
+| pokemon-type-api
+| types de pokemon
+| 3
+
+| trainer-api
+| gestion des trainers (GET/POST) avec stockage BDD
+| 5
+
+| trainer-api
+| API sécurisée en Basic HTTP login + mot de pase
+| 3
+
+| pokemon-ui
+| affichage du pokedex
+| 2
+
+| pokemon-ui
+| IHM sécurisée (login avec les comptes de trainers)
+| 3
+
+| pokemon-ui
+| affichage des trainers et de leurs pokémons
+| 3
+
+| toutes API
+| qualité globale de code (tests | 1
+
+|===
+
+== Amélioration continue
+
+Aidez moi à m'améliorer !
+
+Pour ce faire, remplissez ce https://forms.gle/CDFjRpNJ54rLVWHZA[sondage] (c'est anonyme, lâchez vous!)
