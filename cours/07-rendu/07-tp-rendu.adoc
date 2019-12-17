@@ -34,6 +34,8 @@ Le projet est donc constitué de 3 parties :
 
 NOTE: Le tp "handcraft" ne fait pas partie du rendu.
 
+NOTE: Si vous déployez vos TP sur Heroku, vous pouvez ajouter un fichier `README.md` à la racine de votre projet qui décrit l'URL d'accès à votre projet
+
 == Critères de notation
 
 |===
